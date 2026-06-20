@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>专注力评估 | 了解孩子的专注类型</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#EFF6FF,#F5F9FF 30%,#E0ECFF);color:#1A2A4A;line-height:1.8;min-height:100vh}
+.c{max-width:600px;margin:0 auto;padding:20px 20px 40px}
+.pg{display:none}.pg.on{display:block;animation:in .4s ease}@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.brand{text-align:center;padding:12px 0 0;font-size:12px;color:#8AA0C0}
+.hero{text-align:center;padding:28px 0 20px}
+.hero .em{font-size:44px;margin-bottom:8px}
+.hero h1{font-size:26px;font-weight:800;color:#2563EB;line-height:1.4;margin-bottom:8px}
+.hero .sub{font-size:15px;color:#6A8AB0}
+.card{background:white;border-radius:16px;padding:20px 24px;margin-bottom:12px;box-shadow:0 2px 16px rgba(30,60,120,.06)}
+.card h3{font-size:16px;color:#2563EB;margin-bottom:8px}
+.card p,.card li{font-size:14px;color:#4A5A6A;line-height:1.7}
+.trust{text-align:center;padding:8px 0 20px;font-size:12px;color:#8AA0C0}
+.btn{display:block;width:100%;padding:16px 24px;border:none;border-radius:14px;font-size:18px;font-weight:700;cursor:pointer;text-align:center;transition:all .2s}
+.btn:active{transform:scale(.98)}
+.btn-go{background:linear-gradient(135deg,#3B82F6,#2563EB);color:white;box-shadow:0 4px 20px rgba(37,99,235,.25)}
+.qh{padding:16px 0 8px}
+.pb{height:6px;background:#D0E0F0;border-radius:3px;overflow:hidden;margin-bottom:8px}
+.pf{height:100%;background:linear-gradient(90deg,#3B82F6,#2563EB);border-radius:3px;transition:width .3s ease;width:10%}
+.pt{text-align:right;font-size:13px;color:#8AA0C0}
+.qr{text-align:center;font-size:14px;color:#6A8AB0;padding:0 0 12px}
+.qc{background:white;border-radius:16px;padding:18px 18px 4px;box-shadow:0 2px 16px rgba(30,60,120,.06);margin-bottom:14px}
+.qn{display:inline-block;background:#EFF6FF;color:#2563EB;font-size:13px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:8px}
+.qt{font-size:17px;font-weight:600;color:#1A2A4A;margin-bottom:12px;line-height:1.5}
+.qo{display:flex;flex-direction:column;gap:8px;padding-bottom:14px}
+.opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:2px solid #D0E0F0;border-radius:12px;cursor:pointer;transition:all .2s;background:#FAFCFF;font-size:15px;color:#4A5A6A;user-select:none}
+.opt:hover,.opt.sel{border-color:#3B82F6;background:#EFF6FF}
+.opt .rd{width:20px;height:20px;border-radius:50%;border:2px solid #C0D0E0;flex-shrink:0}
+.opt.sel .rd{border-color:#3B82F6;background:#3B82F6}
+.opt.sel .rd::after{content:"";display:block;width:8px;height:8px;border-radius:50%;background:white;margin:4px}
+.btn-row{display:flex;gap:12px;margin:0 0 20px}
+.btn-row .btn{flex:1;font-size:15px;padding:14px}
+.btn-pv{background:#E8EFF8;color:#5A6A7A}
+.btn-nx{background:linear-gradient(135deg,#3B82F6,#2563EB);color:white}
+.rh{text-align:center;padding:20px 0 8px}
+.rh h2{font-size:24px;font-weight:800;color:#2563EB;margin-bottom:4px}
+.rc{background:white;border-radius:16px;padding:20px 24px;margin-bottom:12px;box-shadow:0 2px 16px rgba(30,60,120,.06)}
+.rc h4{font-size:16px;color:#2563EB;margin-bottom:8px}
+.rc li{margin-left:16px;padding:2px 0;font-size:14px;color:#4A5A6A;line-height:1.9}
+.lvl{display:inline-block;font-size:20px;padding:8px 20px;border-radius:20px;margin:8px 0;font-weight:800}
+.lw{background:#FEF2F2;color:#DC2626}
+.lm{background:#FFFBEB;color:#D97706}
+.ls{background:#ECFDF5;color:#059669}
+.mb{height:12px;background:#E8EFF8;border-radius:6px;overflow:hidden;margin:12px 0}
+.mf{height:100%;border-radius:6px;transition:width .6s ease}
+.strat{background:#EFF6FF;border-radius:12px;padding:16px;margin:8px 0}
+.strat h5{font-size:15px;color:#2563EB;margin-bottom:4px}
+.strat .why{font-size:12px;color:#8AA0C0;margin-top:4px}
+.surprise{background:linear-gradient(135deg,#F0F7FF,#E8F0FF);border:2px solid #93C5FD;border-radius:16px;padding:24px 20px;margin-bottom:16px;text-align:center}
+.surprise h3{font-size:17px;color:#2563EB;margin-bottom:10px}
+.surprise p{font-size:14px;color:#4A5A6A;margin-bottom:10px}
+.surprise ul{text-align:left;font-size:14px;color:#4A5A6A;line-height:2.2;margin-bottom:12px;padding:0 12px;list-style:none}
+.footer{text-align:center;font-size:12px;color:#8AA0C0;padding:16px;line-height:1.8}
+@media(max-width:400px){.hero h1{font-size:22px}.qt{font-size:15px}.opt{font-size:14px;padding:12px 14px}.btn{font-size:16px;padding:14px 20px}.rh h2{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="brand">🧠 专注力评估 · Barkley执行功能研究</div>
+<div class="c">
+<div class="pg on" id="p0">
+<div class="hero">
+<div class="em">🎯</div>
+<h1>他坐不住<br>是态度问题还是能力问题？</h1>
+<p class="sub">10道题 · 3分钟 · 哈佛Barkley执行功能研究</p>
+</div>
+<div class="card"><h3>🔍 你会知道</h3><p>他的专注力在同龄人中什么水平<br>为什么催了100遍还不动<br>怎么把专注力练起来（不是靠吼）</p></div>
+<div class="card"><h3>📖 科学依据</h3><p>Barkley执行功能理论（哈佛医学院，30年研究）。专注力不是天生的，是大脑前额叶的执行功能——像肌肉，可以练。</p></div>
+<button class="btn btn-go" onclick="start()">开始测试（免费）</button>
+<p class="trust">没有对错 · 选最像你家孩子的那一个</p>
+<div class="footer">Barkley 2012 · Diamond 2013 · 哈佛医学院30年研究</div>
+</div>
+
+<div class="pg" id="p1">
+<div class="qh"><div class="pb"><div class="pf" id="pf"></div></div><div class="pt" id="pt">1/10</div></div>
+<p class="qr">选最像你家孩子的，没有对错</p>
+<div id="qa"></div>
+<div class="btn-row">
+<button class="btn btn-pv" id="bp" onclick="prev()">上一题</button>
+<button class="btn btn-nx" id="bn" onclick="next()">下一题</button>
+</div>
+</div>
+
+<div class="pg" id="p2">
+<div class="rh">
+<p style="font-size:14px;color:#8AA0C0" id="rl"></p>
+<h2 id="rt"></h2>
+</div>
+<div id="rx"></div>
+<div class="surprise"><h3>🎁 额外送你的小惊喜</h3><p>除了测评结果，还准备了：</p><ul><li>30天专注力训练计划表</li><li>5个每天可以玩的专注力游戏</li><li>家长配合指南</li></ul><a href="bonus.html" style="display:inline-block;margin:8px 0;padding:12px 24px;background:#93C5FD;color:#1A2A4A;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none">点我直接领取</a></div>
+<button class="btn" style="background:white;color:#2563EB;border:2px solid:#B0C8E8" onclick="location.reload()">重新测试</button>
+<div class="footer">Barkley 2012 · Diamond 2013 · 哈佛医学院30年研究<br>专注力像肌肉——给他方法，给他时间</div>
+</div>
+</div>
+<script>
+var Q=[{q:"写作业的时候，孩子？",a:"中间得起好几次身",b:"基本能一口气写完"},{q:"你跟他说一件事，孩子？",a:"说好几遍才动",b:"说一遍就去做了"},{q:"他的东西（文具/玩具），孩子？",a:"经常找不着",b:"基本能自己归位"},{q:"正做着什么事被打断，孩子？",a:"很难回到刚才的事上",b:"能继续做刚才的事"},{q:"需要排队或等待的时候，孩子？",a:"等不了，急得不行",b:"能安静等"},{q:"记作业或任务，孩子？",a:"经常漏记、忘掉",b:"记得挺清楚"},{q:"做题的时候，孩子？",a:"粗心漏题、看错数",b:"比较仔细"},{q:"旁边有声音或动静，孩子？",a:"马上被吸引过去",b:"不太受影响"},{q:"一不如意的时候，孩子？",a:"一点就炸、情绪上来",b:"能控制住情绪"},{q:"他的书包或桌面，孩子？",a:"一团乱，不会收拾",b:"自己会整理好"}];
+var cur=0,ans=new Array(10).fill(null);
+function pg(n){document.querySelectorAll(".pg").forEach(function(e){e.classList.remove("on")});document.getElementById("p"+n).classList.add("on");window.scrollTo({top:0,behavior:"smooth"})}
+function start(){cur=0;ans=new Array(10).fill(null);pg(1);rq();un()}
+var autoTimer=null;
+function rq(){var q=Q[cur];document.getElementById("qa").innerHTML='<div class="qc"><span class="qn">第'+(cur+1)+'题 / 共10题</span><div class="qt">'+q.q+'</div><div class="qo"><div class="opt'+(ans[cur]==="a"?" sel":"")+'" onclick="sel(\"a\")"><div class="rd"></div><span>'+q.a+'</span></div><div class="opt'+(ans[cur]==="b"?" sel":"")+'" onclick="sel(\"b\")"><div class="rd"></div><span>'+q.b+'</span></div></div></div>';document.getElementById("pf").style.width=Math.round((cur+1)/10*100)+"%";document.getElementById("pt").textContent=(cur+1)+"/10";document.querySelectorAll("#qa .opt").forEach(function(el){el.onclick=function(){var v=this.getAttribute("data-v");ans[cur]=v;if(autoTimer)clearTimeout(autoTimer);rq();if(cur<9){autoTimer=setTimeout(function(){cur++;rq();un()},400)}}})}
+function sel(v){ans[cur]=v;if(autoTimer)clearTimeout(autoTimer);rq();if(cur<9){autoTimer=setTimeout(function(){cur++;rq();un()},400)}}
+function next(){if(ans[cur]===null){document.querySelectorAll(".opt").forEach(function(o){o.style.borderColor="#F0C0C0";setTimeout(function(){o.style.borderColor="#D0E0F0"},600)});return}if(autoTimer)clearTimeout(autoTimer);if(cur<9){cur++;rq();un()}else{show()}}
+function prev(){if(cur>0){cur--;rq();un()}}
+function un(){document.getElementById("bp").style.visibility=cur===0?"hidden":"visible";document.getElementById("bn").textContent=cur===9?"看结果":"下一题"}
+function show(){var ac=ans.filter(function(a){return a==="a"}).length;var level,desc,lvlClass,mfStyle,subtext;var strats=[];if(ac>=7){level="专注力还在发育";subtext="别着急，他不是故意的";desc="他专注力还在发育——不是态度问题，是能力问题。好消息：专注力像肌肉，可以训练。";lvlClass="lw";mfStyle="width:25%;background:linear-gradient(90deg,#FCA5A5,#DC2626)";strats=[{t:"番茄钟训练法",h:"设15分钟计时器。响了休息5分钟。不贪多——15分钟是儿童专注力上限。",w:"Barkley: 儿童专注力12-15分钟。不是孩子不行，是要求不合理。"},{t:"减少干扰",h:"书桌上只放这一科的东西。其他全收。书包拉好放远处。",w:"视觉干扰消耗注意力。桌面干净 = 大脑干净。"},{t:"分解任务",h:"说写完这一页，不说写完作业。小目标即时反馈。",w:"大任务让人焦虑。小任务完成时大脑释放多巴胺。"},{t:"先动再学",h:"写作业前跳绳3分钟或跑5圈。出点汗再坐下去。",w:"运动增加多巴胺——专注力的原料。效果持续45分钟。"},{t:"用计时器",h:"让他自己看到时间在走——比你快点有效10倍。",w:"可视化时间帮孩子建立时间感知。"}]}else if(ac<=3){level="专注力很好";subtext="不错的底子";desc="他的专注力在同龄人中属于很好的水平。能管住自己，这是很难得的能力。好好保护。";lvlClass="ls";mfStyle="width:85%;background:linear-gradient(90deg,#6EE7B7,#059669)";strats=[{t:"保持节奏",h:"保持15-20分钟一个专注块。不要因为状态好就拉长时间。",w:"稳定比冲刺更重要。保护已有的好习惯。"},{t:"挑战升级",h:"每周加2-3分钟，慢慢往上走。不急。",w:"专注力像肌肉，渐进超负荷才有效。"},{t:"自监控",h:"让他自己记今天专心了多久。自己管理自己。",w:"元认知能力——知道自己专注了多久，比被人盯着管用。"},{t:"教别人",h:"让他教弟弟妹妹或同学怎么保持专注。",w:"能教会别人 = 真正内化了。"}]}else{level="专注力中等";subtext="中等偏上，还可以更好";desc="他的专注力在同龄人中属于中等水平。有时候好有时候差——关键是有方法帮他保持和提升。";lvlClass="lm";mfStyle="width:55%;background:linear-gradient(90deg,#FCD34D,#D97706)";strats=[{t:"番茄钟训练法",h:"设15分钟计时器。响了休息5分钟。",w:"Barkley: 儿童专注力12-15分钟。"},{t:"减少干扰 + 一次一事",h:"桌上只放这科。其他收。",w:"视觉干扰消耗注意力。"},{t:"自监控 + 渐进训练",h:"让他自己记今天专心了多久。每周+2分钟。",w:"慢慢来。持续进步比一次到位更重要。"},{t:"先动再学",h:"写作业前跳3分钟。出点汗再坐。",w:"运动 = 专注力燃料。"}]}document.getElementById("rl").textContent=subtext;document.getElementById("rt").textContent=level;var h='<div class="card" style="text-align:center"><span class="lvl '+lvlClass+'">'+level+'</span><div class="mb"><div class="mf" style="'+mfStyle+'"></div></div><p style="font-size:15px;color:#4A5A6A">'+desc+'</p></div>';h+='<div class="card"><h3>可以这样帮他</h3>';strats.forEach(function(s){h+='<div class="strat"><h5>'+s.t+'</h5><p style="font-size:14px;color:#4A5A6A">'+s.h+'</p><p class="why">'+s.w+'</p></div>'});h+='</div>';h+='<div class="card"><h3>跟老师可以这样说</h3><p style="font-size:14px;color:#4A5A6A;line-height:1.8;background:#FFFBF0;border-left:3px solid #F5C842;padding:12px 16px;border-radius:0 8px 8px 0" id="tt">老师您好，孩子的专注力还在发育中。我们在家用番茄法帮他训练——学15分钟休息5分钟。想了解课堂上的专注情况，看看怎么配合您。谢谢！</p><button class="btn" style="margin-top:10px;padding:8px 16px;font-size:13px;background:#E8EFF8;color:#5A6A7A;border:none;border-radius:8px;cursor:pointer" onclick="cpy()">一键复制发给老师</button></div>';document.getElementById("rx").innerHTML=h;pg(2)}
+function cpy(){var t=document.getElementById("tt").textContent;if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){alert("已复制！")})}else{prompt("复制:",t)}}
+</script>
+</body>
+</html>
